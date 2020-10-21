@@ -25,10 +25,15 @@ export default class Login extends Component {
         // })
     }
 
+    handleSubmit = (event) =>{
+        event.preventDefault()
+        console.log(event)
+    }
+
     render(){
         return(
             <div className="form-div">
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input 
                     type="text" 
                     name="firstName" 
@@ -84,6 +89,7 @@ export default class Login extends Component {
                 <option value="red">Red</option>
             </select>
             <h3> Your fav color is {this.state.favColor} </h3>
+            <button>Submit</button>
             </form>
             </div>
         )
