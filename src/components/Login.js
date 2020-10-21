@@ -6,7 +6,8 @@ export default class Login extends Component {
         this.state ={
             firstName: "",
             lastName: "",
-            isFriendly: true
+            isFriendly: true,
+            gender: ""
         }
     }
 
@@ -44,7 +45,7 @@ export default class Login extends Component {
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
 
                 <textarea value={"Some default value"}/>
-
+<br/>
                 
                 <input 
                 type="checkbox"
@@ -52,7 +53,25 @@ export default class Login extends Component {
                 checked={this.state.isFriendly}
                 onChange={this.handleChange}
                 /> Is friendly?
+    <br/>
+
+                <input 
+                type="radio"
+                name="gender"
+                value="female"
+                checked={this.state.gender === "female"}
+                onChange={this.handleChange}
+                /> female?
+            <br/>
+            <input 
+                type="radio"
+                name="gender"
+                value="male"
+                checked={this.state.gender === "male"}
+                onChange={this.handleChange}
+                /> male?
             </form>
+            <h2>You are a {this.state.gender}</h2>
             </div>
         )
     }
