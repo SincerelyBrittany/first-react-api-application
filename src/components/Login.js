@@ -10,9 +10,13 @@ export default class Login extends Component {
     }
 
     handleChange = (event) => {
+        const {name, value} = event.target
         this.setState({
-            [event.target.name]: event.target.value
+            [name]: value
         })
+        // this.setState({
+        //     [event.target.name]: event.target.value
+        // })
     }
 
     render(){
