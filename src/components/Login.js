@@ -7,7 +7,8 @@ export default class Login extends Component {
             firstName: "",
             lastName: "",
             isFriendly: true,
-            gender: ""
+            gender: "",
+            favColor: ""
         }
     }
 
@@ -70,8 +71,20 @@ export default class Login extends Component {
                 checked={this.state.gender === "male"}
                 onChange={this.handleChange}
                 /> male?
+               <h2>You are a {this.state.gender}</h2>
+
+            <label> What is your Favorite Color</label>
+            <select
+                value={this.state.favColor}
+                onChange={this.handleChange}
+                name="favColor"
+            >
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+            </select>
+            <h3> Your fav color is {this.state.favColor} </h3>
             </form>
-            <h2>You are a {this.state.gender}</h2>
             </div>
         )
     }
