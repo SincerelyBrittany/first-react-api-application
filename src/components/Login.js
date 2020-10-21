@@ -4,13 +4,14 @@ export default class Login extends Component {
     constructor(){
         super()
         this.state ={
-            firstName: ""
+            firstName: "",
+            lastName: ""
         }
     }
 
     handleChange = (event) => {
         this.setState({
-            firstName: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -18,8 +19,9 @@ export default class Login extends Component {
         return(
             <div className="form-div">
             <form>
-                <input type="text" placeholder="First Name" onChange={this.handleChange}/>
-                <h1>{this.state.firstName}</h1>
+                <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange}/>
+                <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange}/>
+                <h1>{this.state.firstName} {this.state.lastName}</h1>
             </form>
             </div>
         )
